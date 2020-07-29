@@ -28,6 +28,7 @@ target/
 *.diff
 *.patch
 *.tmp
+*.json
 
 # system ignore
 .DS_Store
