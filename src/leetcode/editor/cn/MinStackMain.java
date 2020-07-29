@@ -49,7 +49,7 @@ public class MinStackMain {
     public static void main(String[] args) {
         // ["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
         //[[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
-        MinStack minStack = new MinStack();
+        MinStack minStack = new MinStackMain().new MinStack();
         minStack.push(2147483646);
         minStack.push(2147483646);
         minStack.push(2147483647);
@@ -68,59 +68,50 @@ public class MinStackMain {
         minStack.pop();
         minStack.getMin();
     }
-}
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class MinStack {
-    /**
-     *
-     */
-    Stack<Struct> stack;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class MinStack {
+        /**
+         *
+         */
+        Stack<Struct> stack;
 
-    class Struct{
-        int v;
-        int min;
+        class Struct {
+            int v;
+            int min;
 
-        public Struct(int v, int min) {
-            this.v = v;
-            this.min = min;
+            public Struct(int v, int min) {
+                this.v = v;
+                this.min = min;
+            }
+        }
+
+        /**
+         * initialize your data structure here.
+         */
+        public MinStack() {
+            stack = new Stack<>();
+        }
+
+        public void push(int x) {
+            if (stack.isEmpty()) {
+                stack.push(new Struct(x, x));
+            } else {
+                stack.push(new Struct(x, stack.peek().min > x ? x : stack.peek().min));
+            }
+        }
+
+        public void pop() {
+            stack.pop();
+        }
+
+        public int top() {
+            return stack.peek().v;
+        }
+
+        public int getMin() {
+            return stack.peek().min;
         }
     }
-
-    /**
-     * initialize your data structure here.
-     */
-    public MinStack() {
-        stack = new Stack<>();
-    }
-
-    public void push(int x) {
-        if (stack.isEmpty()) {
-            stack.push(new Struct(x,x));
-        } else {
-            stack.push(new Struct(x,stack.peek().min>x?x:stack.peek().min));
-        }
-    }
-
-    public void pop() {
-        stack.pop();
-    }
-
-    public int top() {
-        return stack.peek().v;
-    }
-
-    public int getMin() {
-        return stack.peek().min;
-    }
+    //leetcode submit region end(Prohibit modification and deletion)
 }
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
- * obj.push(x);
- * obj.pop();
- * int param_3 = obj.top();
- * int param_4 = obj.getMin();
- */
-//leetcode submit region end(Prohibit modification and deletion)

@@ -43,57 +43,60 @@ package leetcode.editor.cn;
 
 public class ValidParentheses {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new ValidParentheses().new Solution();
+        System.out.println(solution.isValid("[sadf]["));
     }
-}
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isValid(String s) {
-        char[] chars = s.toCharArray();
-        char[] temp = new char[chars.length];
-        int idx = 0;
-        for (int i = 0; i < chars.length; i++) {
-            switch (chars[i]) {
-                case '}':
-                    if (idx == 0) {
-                        return false;
-                    }
-                    if (temp[idx - 1] == '{') {
-                        idx--;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isValid(String s) {
+            char[] chars = s.toCharArray();
+            char[] temp = new char[chars.length];
+            int idx = 0;
+            for (int i = 0; i < chars.length; i++) {
+                switch (chars[i]) {
+                    case '}':
+                        if (idx == 0) {
+                            return false;
+                        }
+                        if (temp[idx - 1] == '{') {
+                            idx--;
+                            break;
+                        } else {
+                            return false;
+                        }
+                    case ']':
+                        if (idx == 0) {
+                            return false;
+                        }
+                        if (temp[idx - 1] == '[') {
+                            idx--;
+                            break;
+                        } else {
+                            return false;
+                        }
+                    case ')':
+                        if (idx == 0) {
+                            return false;
+                        }
+                        if (temp[idx - 1] == '(') {
+                            idx--;
+                            break;
+                        } else {
+                            return false;
+                        }
+                    case '[':
+                    case '{':
+                    case '(':
+                        temp[idx++] = chars[i];
                         break;
-                    } else {
-                        return false;
-                    }
-                case ']':
-                    if (idx == 0) {
-                        return false;
-                    }
-                    if (temp[idx - 1] == '[') {
-                        idx--;
-                        break;
-                    } else {
-                        return false;
-                    }
-                case ')':
-                    if (idx == 0) {
-                        return false;
-                    }
-                    if (temp[idx - 1] == '(') {
-                        idx--;
-                        break;
-                    } else {
-                        return false;
-                    }
-                case '[':
-                case '{':
-                case '(':
-                    temp[idx++] = chars[i];
-                    break;
+                }
             }
-        }
 
-        return idx == 0 ? true : false;
+            return idx == 0 ? true : false;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
+}
+
+
