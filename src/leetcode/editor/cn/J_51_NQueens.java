@@ -37,16 +37,13 @@ package leetcode.editor.cn;
 // Related Topics 回溯算法 
 // 👍 480 👎 0
 
-import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
-import sun.applet.Main;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NQueens {
+public class J_51_NQueens {
     public static void main(String[] args) {
-        Solution solution = new NQueens().new Solution();
+        Solution solution = new J_51_NQueens().new Solution();
         System.out.println(solution.solveNQueens(5));
     }
 

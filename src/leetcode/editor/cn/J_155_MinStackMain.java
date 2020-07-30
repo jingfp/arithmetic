@@ -40,16 +40,13 @@ package leetcode.editor.cn;
 // Related Topics 栈 设计 
 // 👍 622 👎 0
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class MinStackMain {
+public class J_155_MinStackMain {
     public static void main(String[] args) {
         // ["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
         //[[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
-        MinStack minStack = new MinStackMain().new MinStack();
+        MinStack minStack = new J_155_MinStackMain().new MinStack();
         minStack.push(2147483646);
         minStack.push(2147483646);
         minStack.push(2147483647);

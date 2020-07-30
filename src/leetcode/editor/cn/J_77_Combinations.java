@@ -16,13 +16,12 @@ package leetcode.editor.cn;
 // Related Topics 回溯算法 
 // 👍 320 👎 0
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Combinations {
+public class J_77_Combinations {
     public static void main(String[] args) {
-        Solution solution = new Combinations().new Solution();
+        Solution solution = new J_77_Combinations().new Solution();
         List<List<Integer>> combine = solution.combine(4, 2);
         System.out.println(combine);
     }

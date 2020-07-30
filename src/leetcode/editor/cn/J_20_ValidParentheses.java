@@ -41,9 +41,9 @@ package leetcode.editor.cn;
 // Related Topics 栈 字符串 
 // 👍 1728 👎 0
 
-public class ValidParentheses {
+public class J_20_ValidParentheses {
     public static void main(String[] args) {
-        Solution solution = new ValidParentheses().new Solution();
+        Solution solution = new J_20_ValidParentheses().new Solution();
         System.out.println(solution.isValid("[sadf]["));
     }
 
